@@ -1,0 +1,92 @@
+<header>
+  <div style="display: flex">
+    <img src="./assets/img/cocorahs_logo_shaped_trans.png" />
+    <label class="ft23 pt60"><b>Community Colaborative Rain, Hail & Snow Network</b></label>
+  </div>
+</header>
+<div>
+  <label class="ft23"><b>Find your own weather insights with the CoCoRaHS dataset </b></label>
+</div>
+<br />
+<div>
+  <label>
+    CoCoRaHS (pronounced KO-ko-rozz) is a grassroots volunteer network of backyard weather observers of all ages and
+    backgrounds working together to measure and map precipitation (rain, hail and snow) in their local communities. By
+    using low-cost measurement tools, stressing training and education, and utilizing an interactive Website, our aim is
+    to provide the highest quality data for natural resource, education and research applications. The only requirements
+    to join are an enthusiasm for watching and reporting weather conditions and a desire to learn more about how weather
+    can affect and impact our lives.
+    <br /><br />
+    Our Web page provides the ability for our observers to see their observations mapped out in "real time", as well as
+    providing a wealth of information for our data users.
+    <br /><br />
+    All of this data is in the public domain and free for you to explore and utilize in your research and commercial
+    projects.
+    <br /><br />
+    Want to understand the types of analysis you can do with CoCoRaHS data? Read on for some examples of the types of
+    questions you can answer and the for instructions on how easy it is for you to get the data.
+    <br /><br />
+  </label>
+</div>
+
+<div>
+  <label class="ft19"><b>What are the top 10 wettest counties in the USA?</b></label>
+</div>
+<ng-container>
+  <div class="pt10">
+    <app-wettest-counties></app-wettest-counties>
+  </div>
+  <br />
+</ng-container>
+
+<div>
+  <label class="ft19"><b>How do US states compare in rainfall in any given month over a calendar year?</b></label>
+</div>
+<ng-container>
+  <div class="pt10">
+    <app-us-average></app-us-average>
+  </div>
+  <br />
+</ng-container>
+
+
+
+<div>
+  <label class="ft19"><b>How do counties vary in rainfall by county?</b></label>
+</div>
+<ng-container>
+  <div class="pt10">
+    <app-scale-bar-heatmap></app-scale-bar-heatmap>
+  </div>
+</ng-container>
+
+<div>
+  <label class="ft19"><b>Monthly Box-and-Whisker Plot for the State of Colorado</b></label>
+</div>
+<div style="display: block">
+  <div class="textCenter">
+    <select name="duration" [(ngModel)]="selectedYear" style="width: 300px">
+      <option *ngFor="let y of years" [value]="y">{{y}}</option>
+    </select>
+  </div>
+  <div class="pt10 textCenter" *ngIf="selectedYear == 2017">
+    <app-scale-bar2017></app-scale-bar2017>
+  </div>
+  <div class="pt10 textCenter" *ngIf="selectedYear == 2018">
+    <app-scale-bar2018></app-scale-bar2018>
+  </div>
+  <div class="pt10 textCenter" *ngIf="selectedYear == 2019">
+    <app-scale-bar2019></app-scale-bar2019>
+  </div>
+</div>
+<div class="pt10">
+  <label class="ft19"><b>Get access and start exploring now!</b></label>
+</div>
+<br />
+<div>
+  <label>
+    Getting access to the CoCoRaHS dataset is easy cloning <a href="https://github.com/solliancenet/cocorahs-ai">this GitHub repo</a>, opening the notebook that most interests
+    you and running it! All of the data will be downloaded for you from our public cloud storage running on Microsoft
+    Azure.
+  </label>
+</div>
